@@ -1,11 +1,14 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scenes/MainMenu/bruitPerlin.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/MainMenu/MainMenu.gd" type="Script" id=1]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
@@ -39,3 +42,6 @@ margin_top = 329.0
 margin_right = 99.0
 margin_bottom = 349.0
 text = "Jouer en ligne"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/PlaySolo" to="." method="_on_PlaySolo_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/PlayOnline" to="." method="_on_PlayOnline_pressed"]
