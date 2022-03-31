@@ -18,8 +18,11 @@ func _process(delta):
 func changeTileMap(offset):
 	for x in range(-10,10):
 		for y in range(-10,10):
-			var tile = int(Globals.get_noise_3d(x,y,time)*128.0)
-			$TileMap.set_cell(x,y,0,false,false,false,Vector2(tile,0))
+			var tile = int(Globals.get_noise_3d(x,y,time)*256.0)
+			var tilesheet = 0 
+#			if(tile>120):
+#				tilesheet = -1
+			$TileMap.set_cell(x,y,tilesheet,false,false,false,Vector2(tile,0))
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
